@@ -10,7 +10,8 @@
     "build": "./scripts/build.sh",
     "lint": "eslint .",
     "test": "karma start",
-    "prepublish": "npm run lint && npm run build"
+    "prepublish": "npm run snyk-protect; npm run lint && npm run build",
+    "snyk-protect": "snyk protect"
   },
   "repository": {
     "type": "git",
@@ -41,7 +42,8 @@
     "disposables": "^1.0.1",
     "dnd-core": "^2.0.1",
     "invariant": "^2.1.0",
-    "lodash": "^4.2.0"
+    "lodash": "^4.2.0",
+    "snyk": "^1.189.0"
   },
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0-0"
@@ -86,5 +88,6 @@
     "url-loader": "^0.5.5",
     "webpack": "^1.8.11",
     "webpack-dev-server": "^1.8.2"
-  }
+  },
+  "snyk": true
 }
